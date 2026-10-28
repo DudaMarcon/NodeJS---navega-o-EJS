@@ -57,4 +57,49 @@ router.post("/", (req, res) => {
   res.redirect('/fornecedores');
 })
 
+// excluir 
+
+router.get("/excluir/:id", (req, res) => {
+
+  let id = parseInt(req.params.id);
+
+  fornecedores = fornecedores.filter(c => c.id !== id);
+
+  res.redirect("/fornecedores");
+});
+
+//editar - form - GET
+router.get("/editar/:id", (req, res)=> {
+  let id = parseInt(req.params.id);
+  let fornecedor = fornecedores.find(c => c.id === id)
+
+  if(!fornecedor){
+    return res.redirect("/fornecedores");
+  }
+
+  res.render("fornecedor/editar", { fornecedor });
+});
+
+//editar - efetiva - POST
+
+router.post("/editar/:id", (req, res) => {
+  const id = parseInt(req.params.id);
+
+  const fornecedorEncontrada = fornecedores.find(c => c.id === id);
+
+  if (!fornecedorEncontrada) {
+    return res.redirect("/fornecedores");
+  }
+
+  const { razao, cnpj, email, tel, cid} = req.body;
+
+  fornecedorEncontrada.razao = razao;
+  fornecedorEncontrada.cnpj = cnpj;
+  fornecedorEncontrada.email = email;
+  fornecedorEncontrada.tel = tel;
+  fornecedorEncontrada.cid = cid;
+
+  res.redirect("/fornecedores");
+});
+
 module.exports = router;

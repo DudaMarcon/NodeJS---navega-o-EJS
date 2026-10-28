@@ -53,4 +53,48 @@ router.post("/", (req, res) => {
   res.redirect('/clientes');
 })
 
+// excluir 
+
+router.get("/excluir/:id", (req, res) => {
+
+  let id = parseInt(req.params.id);
+
+  clientes = clientes.filter(c => c.id !== id);
+
+  res.redirect("/clientes");
+});
+
+//editar - form - GET
+router.get("/editar/:id", (req, res)=> {
+  let id = parseInt(req.params.id);
+  let cliente = clientes.find(c => c.id === id)
+
+  if(!cliente){
+    return res.redirect("/clientes");
+  }
+
+  res.render("clientes/editar", { cliente });
+});
+
+//editar - efetiva - POST
+
+router.post("/editar/:id", (req, res) => {
+  const id = parseInt(req.params.id);
+
+  const clienteEncontrada = clientes.find(c => c.id === id);
+
+  if (!clienteEncontrada) {
+    return res.redirect("/clientes");
+  }
+
+  const { nome, email, tel, cid } = req.body;
+
+  clienteEncontrada.nome = nome;
+  clienteEncontrada.email = email;
+  clienteEncontrada.tel = tel;
+  clienteEncontrada.cid = cid;
+
+  res.redirect("/clientes");
+});
+
 module.exports = router;

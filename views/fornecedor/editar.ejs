@@ -1,0 +1,167 @@
+
+<%- include("../partials/header") %>
+<%- include("../partials/nav") %>
+
+<main class="container py-5">
+
+  <!-- Cabeçalho -->
+  <div class="page-heading mb-4">
+    <a href="/fornecedores" class="back-link">
+      <i class="bi bi-arrow-left me-2"></i>
+      Voltar para fornecedores
+    </a>
+
+    <div class="d-flex align-items-center gap-3 mt-3">
+      <div class="page-icon supplier-page-icon">
+        <i class="bi bi-truck"></i>
+      </div>
+
+      <div>
+        <h1 class="h3 fw-bold mb-1">Editar fornecedor</h1>
+        <p class="text-secondary mb-0">
+          Atualize as informações do fornecedor cadastrado.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Formulário -->
+  <div class="row justify-content-center">
+    <div class="col-12 col-lg-9 col-xl-8">
+
+      <div class="card product-form-card">
+        <div class="card-body p-4 p-md-5">
+
+          <form
+            action="/fornecedores/editar/<%= fornecedor.id %>"
+            method="POST"
+          >
+
+            <div class="form-section-title mb-4">
+              <h2 class="h6 fw-bold mb-1">Informações do fornecedor</h2>
+              <p class="text-secondary small mb-0">
+                Confira os dados antes de salvar as alterações.
+              </p>
+            </div>
+
+            <!-- Razão social -->
+            <div class="mb-4">
+              <label for="razao" class="form-label">
+                Razão social
+              </label>
+
+              <input
+                type="text"
+                class="form-control"
+                id="razao"
+                name="razao"
+                placeholder="Digite a razão social"
+                required
+                value="<%= fornecedor.razao %>"
+              >
+            </div>
+
+            <!-- CNPJ -->
+            <div class="row g-3 mb-4">
+
+              <div class="col-12 col-md-6">
+                <label for="cnpj" class="form-label">CNPJ</label>
+
+                <input
+                  type="text"
+                  class="form-control"
+                  id="cnpj"
+                  name="cnpj"
+                  maxlength="18"
+                  placeholder="00.000.000/0000-00"
+                  required
+                  value="<%= fornecedor.cnpj %>"
+                >
+              </div>
+
+              <!-- Telefone -->
+              <div class="col-12 col-md-6">
+                <label for="tel" class="form-label">Telefone</label>
+
+                <input
+                  type="tel"
+                  class="form-control"
+                  id="tel"
+                  name="tel"
+                  placeholder="(00) 00000-0000"
+                  required
+                  value="<%= fornecedor.tel %>"
+                >
+              </div>
+
+            </div>
+
+            <!-- E-mail -->
+            <div class="mb-4">
+              <label for="email" class="form-label">E-mail</label>
+
+              <input
+                type="email"
+                class="form-control"
+                id="email"
+                name="email"
+                placeholder="exemplo@empresa.com"
+                required
+                value="<%= fornecedor.email %>"
+              >
+            </div>
+
+            <!-- Cidade -->
+            <div class="mb-4">
+              <label for="cid" class="form-label">Cidade</label>
+
+              <input
+                type="text"
+                class="form-control"
+                id="cid"
+                name="cid"
+                placeholder="Digite o nome da cidade"
+                required
+                value="<%= fornecedor.cid %>"
+              >
+            </div>
+
+            <hr class="form-divider">
+
+            <!-- Botões -->
+            <div class="d-flex flex-column flex-sm-row justify-content-end gap-2 pt-2">
+
+              <a
+                href="/fornecedores"
+                class="btn btn-light btn-form-cancel"
+              >
+                <i class="bi bi-x-lg me-1"></i>
+                Cancelar
+              </a>
+
+              <button
+                type="submit"
+                class="btn btn-primary btn-form-save"
+              >
+                <i class="bi bi-check2 me-1"></i>
+                Salvar alterações
+              </button>
+
+            </div>
+
+          </form>
+
+        </div>
+      </div>
+
+      <p class="text-secondary small mt-3 text-center">
+        <i class="bi bi-info-circle me-1"></i>
+        Os dados serão atualizados ao salvar o formulário.
+      </p>
+
+    </div>
+  </div>
+
+</main>
+
+<%- include("../partials/footer") %>

@@ -29,6 +29,7 @@
                             <th>Email</th>
                             <th>Telefone</th>
                             <th>Cidade</th>
+                            <th>Opções</th>
 
                         </tr>
                     </thead>
@@ -40,6 +41,16 @@
                             <td><%= mostrar.email %></td>
                             <td><%= mostrar.tel %></td>
                             <td><%= mostrar.cid %></td>
+                            <td>
+                                            <a class="btn btn-success btn-sm"
+                                                href="/clientes/editar/<%= mostrar.id %> ">Editar</a>
+
+                                            <a class="btn btn-danger btn-sm"
+                                                href="/clientes/excluir/<%= mostrar.id %> "
+                                                onclick="return confirm('Deseja excluir este cliente?')">Excluir</a>
+
+
+                                        </td>
                         </tr>
                         <% }) %>
                         
@@ -50,5 +61,6 @@
     </div>
 
 </div>
+
 
 <%- include("../partials/footer") %>

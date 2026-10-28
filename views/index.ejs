@@ -1,62 +1,168 @@
+
 <%- include("partials/header") %>
 <%- include("partials/nav") %>
 
-<div class="container mt-5">
-<h6>Nome: Maria Eduarda Silvestre Marcon</h6>
-<h6>Nome: Felipe Drigo Binatto</h6>
-  <div class="p-5 mb-4 bg-light rounded-3">
-    <div class="container-fluid py-4">
+<main class="container py-5">
 
-      <h1 class="display-5 fw-bold">Sistema de Controle de Produtos</h1>
+  <!-- Apresentação -->
+  <section class="mb-5">
+    <span class="text-primary fw-semibold small text-uppercase">
+      Painel de gerenciamento
+    </span>
 
-      <p class="col-md-8 fs-5">
-        Exemplo desenvolvido com Express, EJS, Routes, Partials e Bootstrap.
-      </p>
+    <h1 class="fw-bold mt-2 mb-2">
+      Bem-vindo ao sistema
+    </h1>
 
-      <a href="/produtos" class="btn btn-primary btn-lg"> Ver Produtos </a>
+    <p class="text-secondary mb-0">
+      Gerencie produtos, fornecedores, clientes e categorias
+      em um só lugar.
+    </p>
+  </section>
+
+  <!-- Módulos -->
+  <section class="mb-5">
+    <div class="d-flex justify-content-between align-items-center mb-3">
+      <h2 class="h5 fw-bold mb-0">Módulos do sistema</h2>
+      <span class="text-secondary small">4 módulos</span>
     </div>
-  </div>
-</div>
 
-<div class="container mt-5">
-  <div class="p-5 mb-4 bg-light rounded-3">
-    <div class="container-fluid py-4">
-      <h1 class="display-5 fw-bold">Sistema de Controle de Fornecedores</h1>
+    <div class="row g-4">
 
-      <p class="col-md-8 fs-5">
-        Exemplo desenvolvido com Express, EJS, Routes, Partials e Bootstrap.
-      </p>
+      <!-- Produtos -->
+      <div class="col-12 col-sm-6 col-lg-3">
+        <div class="card h-100 module-card">
+          <div class="card-body p-4">
+            <div class="module-icon icon-products mb-3">
+              <i class="bi bi-box-seam"></i>
+            </div>
 
-      <a href="/fornecedores" class="btn btn-primary btn-lg"> Ver Fornecedores </a>
+            <h3 class="h5 fw-bold">Produtos</h3>
+            <p class="text-secondary small">
+              Consulte e gerencie os produtos cadastrados.
+            </p>
+
+            <a href="/produtos"
+               class="btn btn-outline-primary w-100 mt-2">
+              Ver produtos
+              <i class="bi bi-arrow-right ms-1"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Fornecedores -->
+      <div class="col-12 col-sm-6 col-lg-3">
+        <div class="card h-100 module-card">
+          <div class="card-body p-4">
+            <div class="module-icon icon-suppliers mb-3">
+              <i class="bi bi-truck"></i>
+            </div>
+
+            <h3 class="h5 fw-bold">Fornecedores</h3>
+            <p class="text-secondary small">
+              Consulte e organize seus fornecedores cadastrados.
+            </p>
+
+            <a href="/fornecedores"
+               class="btn btn-outline-primary w-100 mt-2">
+              Ver fornecedores
+              <i class="bi bi-arrow-right ms-1"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Clientes -->
+      <div class="col-12 col-sm-6 col-lg-3">
+        <div class="card h-100 module-card">
+          <div class="card-body p-4">
+            <div class="module-icon icon-clients mb-3">
+              <i class="bi bi-people"></i>
+            </div>
+
+            <h3 class="h5 fw-bold">Clientes</h3>
+            <p class="text-secondary small">
+              Acesse e gerencie os clientes cadastrados.
+            </p>
+
+            <a href="/clientes"
+               class="btn btn-outline-primary w-100 mt-2">
+              Ver clientes
+              <i class="bi bi-arrow-right ms-1"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Categorias -->
+      <div class="col-12 col-sm-6 col-lg-3">
+        <div class="card h-100 module-card">
+          <div class="card-body p-4">
+            <div class="module-icon icon-categories mb-3">
+              <i class="bi bi-tags"></i>
+            </div>
+
+            <h3 class="h5 fw-bold">Categorias</h3>
+            <p class="text-secondary small">
+              Organize os produtos por categoria e veja os cadastrados.
+            </p>
+
+            <a href="/categorias"
+               class="btn btn-outline-primary w-100 mt-2">
+              Ver categorias
+              <i class="bi bi-arrow-right ms-1"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+
     </div>
-  </div>
-</div>
+  </section>
 
-<div class="container mt-5">
-  <div class="p-5 mb-4 bg-light rounded-3">
-    <div class="container-fluid py-4">
-      <h1 class="display-5 fw-bold">Sistema de Controle de Clientes</h1>
+  <!-- Integrantes -->
+  <section class="team-section p-4 p-md-5">
+    <div class="row align-items-center g-4">
+      <div class="col-md-4">
+        <span class="text-primary fw-semibold small">
+          SOBRE O PROJETO
+        </span>
+        <h2 class="h4 fw-bold mt-2 mb-2">
+          Desenvolvido por
+        </h2>
+        <p class="text-secondary small mb-0">
+          Projeto acadêmico da disciplina de Programação Web II.
+        </p>
+      </div>
 
-      <p class="col-md-8 fs-5">
-        Exemplo desenvolvido com Express, EJS, Routes, Partials e Bootstrap.
-      </p>
+      <div class="col-md-4">
+        <div class="team-member">
+          <div>
+            <h3 class="h6 fw-bold mb-1">
+              Felipe Drigo Binatto
+            </h3>
+            <p class="text-secondary small mb-0">
+              2º DS AMS
+            </p>
+          </div>
+        </div>
+      </div>
 
-      <a href="/clientes" class="btn btn-primary btn-lg"> Ver Clientes </a>
+      <div class="col-md-4">
+        <div class="team-member">
+          <div>
+            <h3 class="h6 fw-bold mb-1">
+              Maria Eduarda Silvestre Marcon
+            </h3>
+            <p class="text-secondary small mb-0">
+              2º DS AMS
+            </p>
+          </div>
+        </div>
+      </div>
     </div>
-  </div>
-</div>
+  </section>
 
-<div class="container mt-5">
-  <div class="p-5 mb-4 bg-light rounded-3">
-    <div class="container-fluid py-4">
-      <h1 class="display-5 fw-bold">Sistema de Controle de Categorias</h1>
+</main>
 
-      <p class="col-md-8 fs-5">
-        Exemplo desenvolvido com Express, EJS, Routes, Partials e Bootstrap.
-      </p>
-
-      <a href="/categorias" class="btn btn-primary btn-lg"> Ver Categorias </a>
-    </div>
-  </div>
-</div>
 <%- include("partials/footer") %>

@@ -1,0 +1,325 @@
+
+/* Fundo geral */
+body {
+  background-color: #f4f7fb;
+  color: #263449;
+  font-family: Arial, Helvetica, sans-serif;
+  min-height: 100vh;
+}
+
+/* Barra de navegação */
+.navbar-custom {
+  background: linear-gradient(135deg, #172554, #1d4ed8);
+  padding: 14px 0;
+  box-shadow: 0 4px 15px rgba(15, 23, 42, 0.15);
+}
+
+.navbar-custom .navbar-brand {
+  font-size: 1.3rem;
+  letter-spacing: 0.3px;
+}
+
+.navbar-custom .nav-link {
+  color: #dbeafe;
+  padding: 10px 12px;
+  border-radius: 8px;
+  transition: background-color 0.2s, color 0.2s;
+}
+
+.navbar-custom .nav-link:hover,
+.navbar-custom .nav-link:focus {
+  color: #ffffff;
+  background-color: rgba(255, 255, 255, 0.12);
+}
+
+/* Menus suspensos */
+.navbar-custom .dropdown-menu {
+  border: 0;
+  border-radius: 10px;
+  padding: 8px;
+  margin-top: 8px;
+  box-shadow: 0 8px 24px rgba(15, 23, 42, 0.15);
+}
+
+.navbar-custom .dropdown-item {
+  border-radius: 6px;
+  padding: 10px 12px;
+}
+
+.navbar-custom .dropdown-item:hover {
+  background-color: #eff6ff;
+  color: #1d4ed8;
+}
+
+/* Cartões das páginas */
+.card {
+  border: 0;
+  border-radius: 14px;
+  overflow: hidden;
+}
+
+.card-header {
+  padding: 18px 22px;
+}
+
+.card-body {
+  padding: 24px;
+}
+
+/* Campos de formulário */
+.form-label {
+  font-weight: 600;
+  color: #334155;
+}
+
+.form-control,
+.form-select {
+  border-color: #dbe2ea;
+  border-radius: 8px;
+  padding: 10px 12px;
+}
+
+.form-control:focus,
+.form-select:focus {
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 0.2rem rgba(59, 130, 246, 0.15);
+}
+
+/* Botões */
+.btn {
+  border-radius: 8px;
+  padding: 9px 16px;
+}
+
+/* Tabelas */
+.table {
+  vertical-align: middle;
+}
+
+.table thead th {
+  background-color: #eff4fa;
+  color: #475569;
+  padding: 14px;
+  white-space: nowrap;
+}
+
+.table tbody td {
+  padding: 14px;
+}
+
+/* Rodapé */
+.footer-custom {
+  background-color: #fff;
+  border-top: 1px solid #e2e8f0;
+  color: #64748b;
+}
+
+@media (max-width: 991.98px) {
+  .navbar-custom .navbar-nav {
+    padding-top: 12px;
+  }
+
+  .navbar-custom .dropdown-menu {
+    margin-top: 2px;
+  }
+}
+
+@media (max-width: 576px) {
+  .card-body {
+    padding: 18px;
+  }
+}
+
+
+
+/* Cabeçalho das páginas de formulário */
+.page-heading {
+  max-width: 850px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.back-link {
+  color: #64748b;
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition: color 0.2s;
+}
+
+.back-link:hover {
+  color: #2563eb;
+}
+
+.page-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 52px;
+  height: 52px;
+  border-radius: 14px;
+  background-color: #dbeafe;
+  color: #2563eb;
+  font-size: 1.5rem;
+}
+
+/* Cartão do formulário de produto */
+.product-form-card {
+  background-color: #ffffff;
+  border: 1px solid #e8edf4;
+  border-radius: 16px;
+  box-shadow: 0 8px 28px rgba(15, 23, 42, 0.04);
+}
+
+.product-form-card .card-body {
+  padding: 32px;
+}
+
+.form-section-title {
+  border-bottom: 1px solid #edf0f5;
+  padding-bottom: 18px;
+}
+
+/* Campos */
+.product-form-card .form-label {
+  display: block;
+  font-size: 0.9rem;
+  margin-bottom: 8px;
+  color: #334155;
+}
+
+.product-form-card .form-control {
+  min-height: 44px;
+  border: 1px solid #dbe2ea;
+  border-radius: 8px;
+  padding: 10px 12px;
+}
+
+.product-form-card textarea.form-control {
+  min-height: 120px;
+  resize: vertical;
+}
+
+.product-form-card .form-control:focus {
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.12);
+}
+
+.product-form-card .input-group-text {
+  background-color: #f8fafc;
+  color: #64748b;
+  border-color: #dbe2ea;
+}
+
+.product-form-card .input-group .form-control {
+  border-radius: 0 8px 8px 0;
+}
+
+.product-form-card .input-group-text {
+  border-radius: 8px 0 0 8px;
+}
+
+.form-divider {
+  border-color: #e8edf4;
+  opacity: 1;
+  margin: 28px 0 20px;
+}
+
+/* Botões do formulário */
+.btn-form-save,
+.btn-form-cancel {
+  min-height: 44px;
+  padding: 11px 18px;
+  border-radius: 8px;
+  font-weight: 600;
+}
+
+.btn-form-save {
+  background-color: #2563eb;
+  border-color: #2563eb;
+}
+
+.btn-form-save:hover {
+  background-color: #1d4ed8;
+  border-color: #1d4ed8;
+}
+
+.btn-form-cancel {
+  border: 1px solid #dbe2ea;
+  color: #475569;
+}
+
+.btn-form-cancel:hover {
+  background-color: #e9eef5;
+  border-color: #cbd5e1;
+}
+
+/* Celulares */
+@media (max-width: 576px) {
+  .product-form-card .card-body {
+    padding: 22px 18px;
+  }
+
+  .page-icon {
+    width: 44px;
+    height: 44px;
+    font-size: 1.25rem;
+  }
+
+  .page-heading h1 {
+    font-size: 1.5rem;
+  }
+
+  .btn-form-save,
+  .btn-form-cancel {
+    width: 100%;
+  }
+}
+
+
+/* Ícone da página de edição de fornecedores */
+.supplier-page-icon {
+  background-color: #ccfbf1;
+  color: #0f766e;
+}
+
+
+/* Ícone da página de edição de clientes */
+.client-page-icon {
+  background-color: #ede9fe;
+  color: #6d28d9;
+}
+
+
+/* Ícone da página de edição de categorias */
+.category-page-icon {
+  background-color: #fffbeb;
+  color: #d97706;
+}
+
+
+/* Ícone da página de cadastro e edição de produtos */
+.product-page-icon {
+  background-color: #dbeafe;
+  color: #1d4ed8;
+}
+
+html,
+body {
+  min-height: 100%;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+main {
+  flex: 1 0 auto;
+}
+
+.site-footer {
+  margin-top: auto;
+  width: 100%;
+}

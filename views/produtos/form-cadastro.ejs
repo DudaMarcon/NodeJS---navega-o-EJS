@@ -1,94 +1,178 @@
-<%- include("../partials/header") %> <%- include("../partials/nav") %>
 
-<div class="container mt-5">
+<%- include("../partials/header") %>
+<%- include("../partials/nav") %>
+
+<main class="container py-5">
+
+  <!-- Cabeçalho -->
+  <div class="page-heading mb-4">
+    <a href="/produtos" class="back-link">
+      <i class="bi bi-arrow-left me-2"></i>
+      Voltar para produtos
+    </a>
+
+    <div class="d-flex align-items-center gap-3 mt-3">
+      <div class="page-icon product-page-icon">
+        <i class="bi bi-box-seam"></i>
+      </div>
+
+      <div>
+        <h1 class="h3 fw-bold mb-1">Novo produto</h1>
+        <p class="text-secondary mb-0">
+          Preencha os dados para cadastrar um novo produto.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Formulário -->
   <div class="row justify-content-center">
-    <div class="col-md-8 col-lg-6">
-      <div class="card shadow-sm">
-        <div class="card-header bg-primary text-white">
-          <h4 class="mb-0">Novo Produto</h4>
-        </div>
+    <div class="col-12 col-lg-9 col-xl-8">
 
-        <div class="card-body">
+      <div class="card product-form-card">
+        <div class="card-body p-4 p-md-5">
+
           <form action="/produtos" method="POST">
-            <div class="mb-3">
-              <label for="nome" class="form-label"> Nome </label>
+
+            <div class="form-section-title mb-4">
+              <h2 class="h6 fw-bold mb-1">
+                Informações do produto
+              </h2>
+
+              <p class="text-secondary small mb-0">
+                Preencha os campos para registrar o produto no sistema.
+              </p>
+            </div>
+
+            <!-- Nome -->
+            <div class="mb-4">
+              <label for="nome" class="form-label">
+                Nome do produto
+              </label>
 
               <input
                 type="text"
                 class="form-control"
                 id="nome"
                 name="nome"
-                placeholder="Digite o nome"
+                placeholder="Ex.: Notebook"
                 required
-              />
+              >
             </div>
 
-            <div class="mb-3">
-              <label for="preco" class="form-label"> Preço </label>
+            <!-- Preço e estoque -->
+            <div class="row g-3 mb-4">
+
+              <div class="col-12 col-md-6">
+                <label for="preco" class="form-label">
+                  Preço (R$)
+                </label>
+
+                <div class="input-group">
+                  <span class="input-group-text">R$</span>
+                  <input
+                    type="number"
+                    step="0.01"
+                    min="0"
+                    class="form-control"
+                    id="preco"
+                    name="preco"
+                    placeholder="0,00"
+                    required
+                  >
+                </div>
+              </div>
+
+              <div class="col-12 col-md-6">
+                <label for="estoque" class="form-label">
+                  Quantidade em estoque
+                </label>
+
+                <input
+                  type="number"
+                  min="0"
+                  step="1"
+                  class="form-control"
+                  id="estoque"
+                  name="estoque"
+                  placeholder="Ex.: 10"
+                  required
+                >
+              </div>
+
+            </div>
+
+            <!-- Categoria -->
+            <div class="mb-4">
+              <label for="categoria" class="form-label">
+                Categoria
+              </label>
 
               <input
-                type="number"
-                step="0.01"
-                min="0"
-                class="form-control"
-                id="preco"
-                name="preco"
-                placeholder="Digite o Preço"
-                required
-              />
-
-            </div>
-
-               <div class="mb-3">
-              <label for="estoque" class="form-label"> Estoque </label>
-
-              <input
-                type="number"
-                min="0"
-                class="form-control"
-                id="estoque"
-                name="estoque"
-                placeholder="Digite a quantidade de produtor no estoque"
-                required
-              />
-            </div>
-             
-            <div class="mb-3">
-              <label for="categoria" class="form-label"> Categoria </label>
-
-              <textarea
+                type="text"
                 class="form-control"
                 id="categoria"
                 name="categoria"
-                rows="4"
-                placeholder="Digite a categoria"
+                placeholder="Ex.: Informática"
               >
-              </textarea>
+
+              <div class="form-text">
+                Informe a categoria à qual o produto pertence.
+              </div>
             </div>
 
-            <div class="mb-3">
-              <label for="descricao" class="form-label"> Descrição </label>
+            <!-- Descrição -->
+            <div class="mb-4">
+              <label for="descricao" class="form-label">
+                Descrição
+                <span class="text-secondary fw-normal">(opcional)</span>
+              </label>
 
               <textarea
                 class="form-control"
                 id="descricao"
                 name="descricao"
                 rows="4"
-                placeholder="Digite a descrição"
+                placeholder="Descreva as características do produto"
+              ></textarea>
+            </div>
+
+            <hr class="form-divider">
+
+            <!-- Botões -->
+            <div class="d-flex flex-column flex-sm-row justify-content-end gap-2 pt-2">
+
+              <a
+                href="/produtos"
+                class="btn btn-light btn-form-cancel"
               >
-              </textarea>
+                <i class="bi bi-x-lg me-1"></i>
+                Cancelar
+              </a>
+
+              <button
+                type="submit"
+                class="btn btn-primary btn-form-save"
+              >
+                <i class="bi bi-plus-lg me-1"></i>
+                Cadastrar produto
+              </button>
+
             </div>
 
-            <div class="d-flex gap-2">
-              <button type="submit" class="btn btn-success">Cadastrar</button>
-
-              <a href="/categorias" class="btn btn-secondary"> Cancelar </a>
-            </div>
           </form>
+
         </div>
       </div>
+
+      <p class="text-secondary small mt-3 text-center">
+        <i class="bi bi-info-circle me-1"></i>
+        Confira os dados antes de cadastrar o produto.
+      </p>
+
     </div>
   </div>
-</div>
+
+</main>
 
 <%- include("../partials/footer") %>

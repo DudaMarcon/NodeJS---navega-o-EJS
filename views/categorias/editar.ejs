@@ -1,0 +1,125 @@
+
+<%- include("../partials/header") %>
+<%- include("../partials/nav") %>
+
+<main class="container py-5">
+
+  <!-- Cabeçalho -->
+  <div class="page-heading mb-4">
+    <a href="/categorias" class="back-link">
+      <i class="bi bi-arrow-left me-2"></i>
+      Voltar para categorias
+    </a>
+
+    <div class="d-flex align-items-center gap-3 mt-3">
+      <div class="page-icon category-page-icon">
+        <i class="bi bi-tags"></i>
+      </div>
+
+      <div>
+        <h1 class="h3 fw-bold mb-1">Editar categoria</h1>
+        <p class="text-secondary mb-0">
+          Atualize as informações da categoria cadastrada.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Formulário -->
+  <div class="row justify-content-center">
+    <div class="col-12 col-lg-9 col-xl-8">
+
+      <div class="card product-form-card">
+        <div class="card-body p-4 p-md-5">
+
+          <form
+            action="/categorias/editar/<%= categoria.id %>"
+            method="POST"
+          >
+
+            <div class="form-section-title mb-4">
+              <h2 class="h6 fw-bold mb-1">
+                Informações da categoria
+              </h2>
+
+              <p class="text-secondary small mb-0">
+                Confira os dados antes de salvar as alterações.
+              </p>
+            </div>
+
+            <!-- Nome -->
+            <div class="mb-4">
+              <label for="nome" class="form-label">
+                Nome da categoria
+              </label>
+
+              <input
+                type="text"
+                class="form-control"
+                id="nome"
+                name="nome"
+                placeholder="Ex.: Informática"
+                required
+                value="<%= categoria.nome %>"
+              >
+            </div>
+
+            <!-- Descrição -->
+            <div class="mb-4">
+              <label for="descricao" class="form-label">
+                Descrição
+                <span class="text-secondary fw-normal">(opcional)</span>
+              </label>
+
+              <textarea
+                class="form-control"
+                id="descricao"
+                name="descricao"
+                rows="5"
+                placeholder="Descreva a finalidade desta categoria"
+              ><%= categoria.descricao %></textarea>
+
+              <div class="form-text">
+                Adicione uma breve descrição para identificar a categoria.
+              </div>
+            </div>
+
+            <hr class="form-divider">
+
+            <!-- Botões -->
+            <div class="d-flex flex-column flex-sm-row justify-content-end gap-2 pt-2">
+
+              <a
+                href="/categorias"
+                class="btn btn-light btn-form-cancel"
+              >
+                <i class="bi bi-x-lg me-1"></i>
+                Cancelar
+              </a>
+
+              <button
+                type="submit"
+                class="btn btn-primary btn-form-save"
+              >
+                <i class="bi bi-check2 me-1"></i>
+                Salvar alterações
+              </button>
+
+            </div>
+
+          </form>
+
+        </div>
+      </div>
+
+      <p class="text-secondary small mt-3 text-center">
+        <i class="bi bi-info-circle me-1"></i>
+        As alterações serão aplicadas ao salvar o formulário.
+      </p>
+
+    </div>
+  </div>
+
+</main>
+
+<%- include("../partials/footer") %>

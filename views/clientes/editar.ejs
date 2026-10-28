@@ -1,0 +1,156 @@
+
+<%- include("../partials/header") %>
+<%- include("../partials/nav") %>
+
+<main class="container py-5">
+
+  <!-- Cabeçalho -->
+  <div class="page-heading mb-4">
+    <a href="/clientes" class="back-link">
+      <i class="bi bi-arrow-left me-2"></i>
+      Voltar para clientes
+    </a>
+
+    <div class="d-flex align-items-center gap-3 mt-3">
+      <div class="page-icon client-page-icon">
+        <i class="bi bi-person-gear"></i>
+      </div>
+
+      <div>
+        <h1 class="h3 fw-bold mb-1">Editar cliente</h1>
+        <p class="text-secondary mb-0">
+          Atualize as informações do cliente cadastrado.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Formulário -->
+  <div class="row justify-content-center">
+    <div class="col-12 col-lg-9 col-xl-8">
+
+      <div class="card product-form-card">
+        <div class="card-body p-4 p-md-5">
+
+          <form
+            action="/clientes/editar/<%= cliente.id %>"
+            method="POST"
+          >
+
+            <div class="form-section-title mb-4">
+              <h2 class="h6 fw-bold mb-1">Informações do cliente</h2>
+              <p class="text-secondary small mb-0">
+                Confira os dados antes de salvar as alterações.
+              </p>
+            </div>
+
+            <!-- Nome -->
+            <div class="mb-4">
+              <label for="nome" class="form-label">
+                Nome completo
+              </label>
+
+              <input
+                type="text"
+                class="form-control"
+                id="nome"
+                name="nome"
+                placeholder="Digite o nome completo"
+                required
+                value="<%= cliente.nome %>"
+              >
+            </div>
+
+            <!-- E-mail -->
+            <div class="mb-4">
+              <label for="email" class="form-label">
+                E-mail
+              </label>
+
+              <input
+                type="email"
+                class="form-control"
+                id="email"
+                name="email"
+                placeholder="exemplo@email.com"
+                required
+                value="<%= cliente.email %>"
+              >
+            </div>
+
+            <!-- Telefone e cidade -->
+            <div class="row g-3 mb-4">
+
+              <div class="col-12 col-md-6">
+                <label for="tel" class="form-label">
+                  Telefone
+                </label>
+
+                <input
+                  type="tel"
+                  class="form-control"
+                  id="tel"
+                  name="tel"
+                  placeholder="(00) 00000-0000"
+                  required
+                  value="<%= cliente.tel %>"
+                >
+              </div>
+
+              <div class="col-12 col-md-6">
+                <label for="cid" class="form-label">
+                  Cidade
+                </label>
+
+                <input
+                  type="text"
+                  class="form-control"
+                  id="cid"
+                  name="cid"
+                  placeholder="Digite a cidade"
+                  required
+                  value="<%= cliente.cid %>"
+                >
+              </div>
+
+            </div>
+
+            <hr class="form-divider">
+
+            <!-- Botões -->
+            <div class="d-flex flex-column flex-sm-row justify-content-end gap-2 pt-2">
+
+              <a
+                href="/clientes"
+                class="btn btn-light btn-form-cancel"
+              >
+                <i class="bi bi-x-lg me-1"></i>
+                Cancelar
+              </a>
+
+              <button
+                type="submit"
+                class="btn btn-primary btn-form-save"
+              >
+                <i class="bi bi-check2 me-1"></i>
+                Salvar alterações
+              </button>
+
+            </div>
+
+          </form>
+
+        </div>
+      </div>
+
+      <p class="text-secondary small mt-3 text-center">
+        <i class="bi bi-info-circle me-1"></i>
+        Os dados serão atualizados ao salvar o formulário.
+      </p>
+
+    </div>
+  </div>
+
+</main>
+
+<%- include("../partials/footer") %>

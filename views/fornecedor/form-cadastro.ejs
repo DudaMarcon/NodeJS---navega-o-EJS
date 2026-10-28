@@ -1,23 +1,53 @@
+
 <%- include("../partials/header") %>
 <%- include("../partials/nav") %>
 
-<div class="container mt-5">
+<main class="container py-5">
+
+  <!-- Cabeçalho -->
+  <div class="page-heading mb-4">
+    <a href="/fornecedores" class="back-link">
+      <i class="bi bi-arrow-left me-2"></i>
+      Voltar para fornecedores
+    </a>
+
+    <div class="d-flex align-items-center gap-3 mt-3">
+      <div class="page-icon supplier-page-icon">
+        <i class="bi bi-truck"></i>
+      </div>
+
+      <div>
+        <h1 class="h3 fw-bold mb-1">Novo fornecedor</h1>
+        <p class="text-secondary mb-0">
+          Preencha os dados para cadastrar um novo fornecedor.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Formulário -->
   <div class="row justify-content-center">
-    <div class="col-md-8 col-lg-6">
+    <div class="col-12 col-lg-9 col-xl-8">
 
-      <div class="card shadow-sm">
-
-        <div class="card-header bg-primary text-white">
-          <h4 class="mb-0">Novo Fornecedor</h4>
-        </div>
-
-        <div class="card-body">
+      <div class="card product-form-card">
+        <div class="card-body p-4 p-md-5">
 
           <form action="/fornecedores" method="POST">
 
-            <div class="mb-3">
+            <div class="form-section-title mb-4">
+              <h2 class="h6 fw-bold mb-1">
+                Informações do fornecedor
+              </h2>
+
+              <p class="text-secondary small mb-0">
+                Preencha os dados da empresa fornecedora.
+              </p>
+            </div>
+
+            <!-- Razão social -->
+            <div class="mb-4">
               <label for="razao" class="form-label">
-                Razão Social
+                Razão social
               </label>
 
               <input
@@ -25,30 +55,53 @@
                 class="form-control"
                 id="razao"
                 name="razao"
-                placeholder="Digite a Razão Social"
+                placeholder="Digite a razão social"
+                autocomplete="organization"
                 required
-              />
+              >
             </div>
 
-            <div class="mb-3">
-              <label for="cnpj" class="form-label">
-                CNPJ
-              </label>
+            <!-- CNPJ e telefone -->
+            <div class="row g-3 mb-4">
 
-              <input
-                type="text"
-                class="form-control"
-                id="cnpj"
-                name="cnpj"
-                maxlength="18"
-                placeholder="00.000.000/0000-00"
-                required
-              />
+              <div class="col-12 col-md-6">
+                <label for="cnpj" class="form-label">
+                  CNPJ
+                </label>
+
+                <input
+                  type="text"
+                  class="form-control"
+                  id="cnpj"
+                  name="cnpj"
+                  maxlength="18"
+                  placeholder="00.000.000/0000-00"
+                  required
+                >
+              </div>
+
+              <div class="col-12 col-md-6">
+                <label for="tel" class="form-label">
+                  Telefone
+                </label>
+
+                <input
+                  type="tel"
+                  class="form-control"
+                  id="tel"
+                  name="tel"
+                  placeholder="(00) 00000-0000"
+                  autocomplete="tel"
+                  required
+                >
+              </div>
+
             </div>
 
-            <div class="mb-3">
+            <!-- E-mail -->
+            <div class="mb-4">
               <label for="email" class="form-label">
-                Email
+                E-mail
               </label>
 
               <input
@@ -56,27 +109,14 @@
                 class="form-control"
                 id="email"
                 name="email"
-                placeholder="Digite o email"
+                placeholder="contato@empresa.com"
+                autocomplete="email"
                 required
-              />
+              >
             </div>
 
-            <div class="mb-3">
-              <label for="tel" class="form-label">
-                Telefone
-              </label>
-
-              <input
-                type="tel"
-                class="form-control"
-                id="tel"
-                name="tel"
-                placeholder="(00) 00000-0000"
-                required
-              />
-            </div>
-
-            <div class="mb-3">
+            <!-- Cidade -->
+            <div class="mb-4">
               <label for="cid" class="form-label">
                 Cidade
               </label>
@@ -86,19 +126,33 @@
                 class="form-control"
                 id="cid"
                 name="cid"
-                placeholder="Digite o nome da Cidade"
+                placeholder="Digite a cidade"
+                autocomplete="address-level2"
                 required
-              />
+              >
             </div>
 
-            <div class="d-flex gap-2">
-              <button type="submit" class="btn btn-success">
-                Cadastrar
-              </button>
+            <hr class="form-divider">
 
-              <a href="/fornecedores" class="btn btn-secondary">
+            <!-- Botões -->
+            <div class="d-flex flex-column flex-sm-row justify-content-end gap-2 pt-2">
+
+              <a
+                href="/fornecedores"
+                class="btn btn-light btn-form-cancel"
+              >
+                <i class="bi bi-x-lg me-1"></i>
                 Cancelar
               </a>
+
+              <button
+                type="submit"
+                class="btn btn-primary btn-form-save"
+              >
+                <i class="bi bi-plus-lg me-1"></i>
+                Cadastrar fornecedor
+              </button>
+
             </div>
 
           </form>
@@ -106,8 +160,14 @@
         </div>
       </div>
 
+      <p class="text-secondary small mt-3 text-center">
+        <i class="bi bi-info-circle me-1"></i>
+        Confira os dados antes de cadastrar o fornecedor.
+      </p>
+
     </div>
   </div>
-</div>
+
+</main>
 
 <%- include("../partials/footer") %>

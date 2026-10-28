@@ -28,6 +28,7 @@
                                     <th>Email</th>
                                     <th>Telefone</th>
                                     <th>Cidade</th>
+                                    <th>Opções</th>
 
 
                                 </tr>
@@ -53,7 +54,18 @@
                                         <td>
                                             <%= mostrar.cid %>
                                         </td>
+                                        <td>
+                                            <a class="btn btn-success btn-sm"
+                                                href="/fornecedores/editar/<%= mostrar.id %> ">Editar</a>
+
+                                            <a class="btn btn-danger btn-sm"
+                                                href="/fornecedores/excluir/<%= mostrar.id %> "
+                                                onclick="return confirm('Deseja excluir este fornecedor?')">Excluir</a>
+
+
+                                        </td>
                                     </tr>
+
                                     <% }) %>
 
                             </tbody>

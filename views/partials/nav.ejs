@@ -1,58 +1,142 @@
-<nav class="navbar navbar-expand-lg bg-dark navbar-dark">
-  <div class="container">
-    <a class="navbar-brand" href="/"> Sistema </a>
 
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu">
+<nav class="navbar navbar-expand-lg navbar-dark navbar-custom">
+  <div class="container">
+
+    <a class="navbar-brand fw-bold" href="/">
+      <i class="bi bi-grid-1x2-fill me-2"></i>
+      Sistema PW
+    </a>
+
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#menu"
+      aria-controls="menu"
+      aria-expanded="false"
+      aria-label="Abrir menu"
+    >
       <span class="navbar-toggler-icon"></span>
     </button>
 
     <div class="collapse navbar-collapse" id="menu">
-      <ul class="navbar-nav me-auto">
+      <ul class="navbar-nav ms-auto">
+
         <li class="nav-item">
-          <a class="nav-link" href="/"> Início </a>
+          <a class="nav-link" href="/">
+            <i class="bi bi-house-door me-1"></i> Início
+          </a>
         </li>
 
-        <!-- DROPDOWN: PRODUTOS -->
+        <!-- Produtos -->
         <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="dropdownProdutos" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Produtos
+          <a
+            class="nav-link dropdown-toggle"
+            href="#"
+            id="dropdownProdutos"
+            role="button"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+          >
+            <i class="bi bi-box-seam me-1"></i> Produtos
           </a>
-          <ul class="dropdown-menu" aria-labelledby="dropdownProdutos">
-            <li><a class="dropdown-item" href="/produtos">Listar Produtos</a></li>
-            <li><a class="dropdown-item" href="/produtos/cadastro">Novo Produto</a></li>
+
+          <ul class="dropdown-menu dropdown-menu-end"
+              aria-labelledby="dropdownProdutos">
+            <li>
+              <a class="dropdown-item" href="/produtos">
+                <i class="bi bi-list-ul me-2"></i> Listar Produtos
+              </a>
+            </li>
+            <li>
+              <a class="dropdown-item" href="/produtos/cadastro">
+                <i class="bi bi-plus-circle me-2"></i> Novo Produto
+              </a>
+            </li>
           </ul>
         </li>
 
-        <!-- DROPDOWN: FORNECEDORES -->
+        <!-- Fornecedores -->
         <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="dropdownFornecedores" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Fornecedores
+          <a
+            class="nav-link dropdown-toggle"
+            href="#"
+            id="dropdownFornecedores"
+            role="button"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+          >
+            <i class="bi bi-truck me-1"></i> Fornecedores
           </a>
-          <ul class="dropdown-menu" aria-labelledby="dropdownFornecedores">
-            <li><a class="dropdown-item" href="/fornecedores">Listar Fornecedores</a></li>
-            <li><a class="dropdown-item" href="/fornecedores/cadastro">Novo Fornecedor</a></li>
+
+          <ul class="dropdown-menu dropdown-menu-end"
+              aria-labelledby="dropdownFornecedores">
+            <li>
+              <a class="dropdown-item" href="/fornecedores">
+                <i class="bi bi-list-ul me-2"></i> Listar Fornecedores
+              </a>
+            </li>
+            <li>
+              <a class="dropdown-item" href="/fornecedores/cadastro">
+                <i class="bi bi-plus-circle me-2"></i> Novo Fornecedor
+              </a>
+            </li>
           </ul>
         </li>
 
-        <!-- DROPDOWN: CLIENTES -->
+        <!-- Clientes -->
         <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="dropdownClientes" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Clientes
+          <a
+            class="nav-link dropdown-toggle"
+            href="#"
+            id="dropdownClientes"
+            role="button"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+          >
+            <i class="bi bi-people me-1"></i> Clientes
           </a>
-          <ul class="dropdown-menu" aria-labelledby="dropdownClientes">
-            <li><a class="dropdown-item" href="/clientes">Listar Clientes</a></li>
-            <li><a class="dropdown-item" href="/clientes/cadastro">Novo Cliente</a></li>
+
+          <ul class="dropdown-menu dropdown-menu-end"
+              aria-labelledby="dropdownClientes">
+            <li>
+              <a class="dropdown-item" href="/clientes">
+                <i class="bi bi-list-ul me-2"></i> Listar Clientes
+              </a>
+            </li>
+            <li>
+              <a class="dropdown-item" href="/clientes/cadastro">
+                <i class="bi bi-person-plus me-2"></i> Novo Cliente
+              </a>
+            </li>
           </ul>
         </li>
 
-        <!-- DROPDOWN: CATEGORIAS -->
+        <!-- Categorias -->
         <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="dropdownCategorias" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Categorias
+          <a
+            class="nav-link dropdown-toggle"
+            href="#"
+            id="dropdownCategorias"
+            role="button"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+          >
+            <i class="bi bi-tags me-1"></i> Categorias
           </a>
-          <ul class="dropdown-menu" aria-labelledby="dropdownCategorias">
-            <li><a class="dropdown-item" href="/categorias">Listar Categorias</a></li>
-            <li><a class="dropdown-item" href="/categorias/cadastro">Nova Categoria</a></li>
+
+          <ul class="dropdown-menu dropdown-menu-end"
+              aria-labelledby="dropdownCategorias">
+            <li>
+              <a class="dropdown-item" href="/categorias">
+                <i class="bi bi-list-ul me-2"></i> Listar Categorias
+              </a>
+            </li>
+            <li>
+              <a class="dropdown-item" href="/categorias/cadastro">
+                <i class="bi bi-plus-circle me-2"></i> Nova Categoria
+              </a>
+            </li>
           </ul>
         </li>
 
