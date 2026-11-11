@@ -28,7 +28,6 @@ Durante o desenvolvimento, o grupo foi responsável pela construção das funcio
 - **Git e GitHub:** controle de versão e hospedagem do código.
 - **ChatGPT:** apoio na elaboração e melhoria dos estilos CSS.
 
-
 ## 5. Funcionalidades
 
 O sistema implementa as operações CRUD:
@@ -117,6 +116,7 @@ A maior parte da estilização foi produzida com o auxílio da IA, enquanto as c
 Nesta seção serão apresentadas as evidências da utilização da Inteligência Artificial durante o processo de estilização.
 
 ### 10.1. Prompt enviado
+
 ![Prompt utilizado na conversa com a IA](public/img/prompt1.png)
 
 Registro da solicitação realizada ao ChatGPT para obter auxílio na melhoria visual do sistema.
@@ -168,3 +168,77 @@ O projeto permitiu ao grupo aplicar conhecimentos de desenvolvimento de sistemas
 A Inteligência Artificial foi utilizada como ferramenta complementar para apoiar a estilização CSS, enquanto os integrantes permaneceram responsáveis pela lógica funcional, pela revisão do código visual e pelas correções manuais necessárias.
 
 Dessa forma, o trabalho documenta a utilização da IA como apoio ao desenvolvimento e destaca a participação do grupo na construção e validação do sistema.
+
+---
+
+## 15. Migração dos CRUDs para arquivos JSON
+
+### 15.1. Objetivo da migração
+
+Foi realizada uma atualização na estrutura de armazenamento dos dados do sistema. Inicialmente, os CRUDs utilizavam arrays para armazenar os registros. Com a migração, os dados passaram a ser armazenados em arquivos JSON, mantendo as funcionalidades existentes.
+
+### 15.2. Prompt utilizado na IA
+
+> Analise meu projeto atual em Node.js e Express e me oriente a migrar os CRUDs que utilizam arrays para arquivos JSON, mantendo a estrutura, as rotas e as páginas existentes.
+>
+> Quero que cada entidade tenha seu próprio arquivo JSON dentro de uma pasta chamada data. Também quero criar um arquivo jsonDatabase.js para centralizar as funções de leitura, gravação e geração de IDs.
+>
+> Explique as alterações necessárias e forneça os códigos passo a passo, de maneira simples, sem reconstruir o projeto do zero e preservando as funcionalidades de cadastro, consulta, edição e exclusão.
+
+### 15.3. Resposta e sugestões da IA
+
+A IA orientou a migração por etapas, sugerindo:
+
+- Criar uma pasta `data` para armazenar os arquivos JSON.
+- Criar o arquivo `jsonDatabase.js` para centralizar a leitura, gravação e geração de IDs.
+- Adaptar as rotas dos CRUDs para utilizar os arquivos JSON.
+- Manter as páginas EJS e a estrutura original do projeto.
+- Testar as operações após as modificações.
+
+### 15.4. Estrutura implementada
+
+```text
+data/
+├── produtos.json
+├── clientes.json
+├── fornecedores.json
+└── categorias.json
+
+utils/
+└── jsonDatabase.js
+```
+
+Cada entidade possui seu próprio arquivo JSON. O arquivo `jsonDatabase.js` centraliza as operações de leitura, gravação e geração de IDs, evitando a repetição de código nas rotas.
+
+### 15.5. Alterações realizadas
+
+Os quatro CRUDs foram adaptados para utilizar seus respectivos arquivos JSON:
+
+- **Produtos:** `produtos.json`
+- **Clientes:** `clientes.json`
+- **Fornecedores:** `fornecedores.json`
+- **Categorias:** `categorias.json`
+
+As rotas passaram a utilizar as funções do arquivo `jsonDatabase.js` para ler e salvar os registros.
+
+As páginas EJS e as funcionalidades existentes foram mantidas.
+
+### 15.6. Desafios encontrados
+
+Durante a migração, foi necessário adaptar cada rota para trabalhar com os arquivos JSON, respeitando os campos e as particularidades de cada entidade.
+
+Também foi necessário testar a gravação e a leitura dos dados para garantir que as operações continuassem funcionando corretamente.
+
+### 15.7. Prints do processo de migração
+
+**15.7.1. Prompt utilizado**
+
+*Inserir print do prompt enviado à IA sobre a migração para JSON.*
+
+![Prompt utilizado na migração](public/img/json.png)
+
+### 15.8. Resultado final
+
+Após a migração, os quatro CRUDs passaram a utilizar arquivos JSON para armazenar os dados. As operações de cadastro, consulta, edição e exclusão foram testadas e continuaram funcionando corretamente.
+
+A alteração permitiu organizar melhor o armazenamento das informações e centralizar as operações em um único arquivo, mantendo a estrutura original da aplicação.
