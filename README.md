@@ -233,9 +233,11 @@ Também foi necessário testar a gravação e a leitura dos dados para garantir 
 
 **15.7.1. Prompt utilizado**
 
-*Inserir print do prompt enviado à IA sobre a migração para JSON.*
-
 ![Prompt utilizado na migração](public/img/json.png)
+
+**15.7.2. Resposta da IA**
+
+![Resposta da IA sobre JSON](public/img/json-resposta.png)
 
 ### 15.8. Resultado final
 
