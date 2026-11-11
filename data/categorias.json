@@ -1,0 +1,17 @@
+[
+  {
+    "id": 1,
+    "nome": "Informática",
+    "descricao": "Produtos e serviços de informática"
+  },
+  {
+    "id": 2,
+    "nome": "Eletrônicos",
+    "descricao": "Produtos eletrônicos"
+  },
+  {
+    "id": 3,
+    "nome": "Roupas",
+    "descricao": "Roupas e acessórios"
+  }
+]

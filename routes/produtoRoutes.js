@@ -1,64 +1,80 @@
+
 const express = require('express');
 const router = express.Router();
 
-// ========================================
-// DADOS
-// ========================================
-let produtos = [
-  { id: 1, nome: 'Notebook', descricao: 'Notebook para uso profissional', preco: 3500, estoque: 10, categoria: 'Informática' },
-  { id: 2, nome: 'Celular', descricao: 'Celular para uso Pessoal', preco: 1500, estoque: 18, categoria: 'Informática' },
-  { id: 3, nome: 'Caderno', descricao: 'caderno para anotacções em bom estado', preco: 350000, estoque: 10990, categoria: 'Papelária' }
-];
+// Importa as funções para trabalhar com JSON
+const banco = require('../utils/jsonDatabase');
 
 // Listar produtos
 router.get('/', (req, res) => {
-  res.render('produtos/index', { produtos: produtos });
+  const produtos = banco.lerDados('produtos.json');
+
+  res.render('produtos/index', { produtos });
 });
 
-// Formulário de cadastro (GET)
+// Formulário de cadastro
 router.get('/cadastro', (req, res) => {
   res.render('produtos/form-cadastro');
 });
 
-// Cadastrar novo produto (POST)
+// Cadastrar novo produto
 router.post('/', (req, res) => {
+  const produtos = banco.lerDados('produtos.json');
+
   const { nome, descricao, preco, estoque, categoria } = req.body;
+
   const novoProduto = {
-    id: produtos.length > 0 ? produtos[produtos.length - 1].id + 1 : 1,
+    id: banco.gerarId(produtos),
     nome,
     descricao,
     preco: Number(preco),
     estoque: Number(estoque),
     categoria
   };
+
   produtos.push(novoProduto);
+
+  banco.salvarDados('produtos.json', produtos);
+
   res.redirect('/produtos');
 });
 
-// Excluir produto (GET)
+// Excluir produto
 router.get('/excluir/:id', (req, res) => {
+  const produtos = banco.lerDados('produtos.json');
   const id = parseInt(req.params.id);
-  produtos = produtos.filter(c => c.id !== id);
+
+  const novosProdutos = produtos.filter(p => p.id !== id);
+
+  banco.salvarDados('produtos.json', novosProdutos);
+
   res.redirect('/produtos');
 });
 
-// Formulário de edição - GET
+// Formulário de edição
 router.get('/editar/:id', (req, res) => {
+  const produtos = banco.lerDados('produtos.json');
   const id = parseInt(req.params.id);
-  const produto = produtos.find(c => c.id === id);
+
+  const produto = produtos.find(p => p.id === id);
+
   if (!produto) {
     return res.redirect('/produtos');
   }
+
   res.render('produtos/editar', { produto });
 });
 
-// Salvar edição - POST (Implementado)
+// Salvar edição
 router.post('/editar/:id', (req, res) => {
+  const produtos = banco.lerDados('produtos.json');
   const id = parseInt(req.params.id);
-  const index = produtos.findIndex(c => c.id === id);
-  
+
+  const index = produtos.findIndex(p => p.id === id);
+
   if (index !== -1) {
     const { nome, descricao, preco, estoque, categoria } = req.body;
+
     produtos[index] = {
       id,
       nome,
@@ -67,27 +83,11 @@ router.post('/editar/:id', (req, res) => {
       estoque: Number(estoque),
       categoria
     };
-  }
-  res.redirect('/produtos');
-});
 
-router.post("/editar/:id", (req, res) => {
-  let id = parseInt(req.params.id);
-  let produto = produtos.find(c => c.id === id);
- 
-  if (!produto) {
-    return res.redirect("/produtos");
+    banco.salvarDados('produtos.json', produtos);
   }
- 
-  const { nome, descricao, preco, estoque, categoria } = req.body;
- 
-  produto.nome = nome;
-  produto.descricao = descricao;
-  produto.preco = preco;
-  produto.estoque = estoque;
-  produto.categoria = categoria;
- 
-  res.redirect("/produtos");
+
+  res.redirect('/produtos');
 });
 
 module.exports = router;

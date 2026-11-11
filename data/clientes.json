@@ -1,0 +1,23 @@
+[
+  {
+    "id": 1,
+    "nome": "Informática",
+    "email": "emailcliente@gmail.com",
+    "tel": "(19) 99999-9999",
+    "cid": "São Paulo - SP"
+  },
+  {
+    "id": 2,
+    "nome": "Pneus Do zé",
+    "email": "pneusdoze@gmail.com",
+    "tel": "(19) 99999-9999",
+    "cid": "Itu - SP"
+  },
+  {
+    "id": 3,
+    "nome": "Hospital",
+    "email": "hospitalsc@gmial.com",
+    "tel": "(11) 99999-9999",
+    "cid": "Salto - SP"
+  }
+]

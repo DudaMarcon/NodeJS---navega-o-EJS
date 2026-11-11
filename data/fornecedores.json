@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "razao": "Informática",
+    "cnpj": "12345678000195",
+    "email": "empresax@empresa.com",
+    "tel": "(99) 99999-9999",
+    "cid": "São Paulo - SP"
+  },
+  {
+    "id": 2,
+    "razao": "Mercado",
+    "cnpj": "12345678000195",
+    "email": "mercado@empresa.com",
+    "tel": "(99) 99999-9999",
+    "cid": "indaituba - SP"
+  },
+  {
+    "id": 3,
+    "razao": "vestuário",
+    "cnpj": "12345678000195",
+    "email": "vestmarck@empresa.com",
+    "tel": "(99) 99999-9999",
+    "cid": "Santos - SP"
+  }
+]

@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "nome": "Notebook",
+    "descricao": "Notebook para uso profissional",
+    "preco": 3500,
+    "estoque": 10,
+    "categoria": "Informática"
+  },
+  {
+    "id": 2,
+    "nome": "Celular",
+    "descricao": "Celular para uso Pessoal",
+    "preco": 1500,
+    "estoque": 18,
+    "categoria": "Informática"
+  },
+  {
+    "id": 3,
+    "nome": "Caderno",
+    "descricao": "caderno para anotacções em bom estado",
+    "preco": 350000,
+    "estoque": 10990,
+    "categoria": "Papelária"
+  }
+]
